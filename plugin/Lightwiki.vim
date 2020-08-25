@@ -1,4 +1,4 @@
-" Vim plugin for markdown to make notes more tidy.
+" Vim plugin for markdown to make notes tidier.
 " Author: zyl-hub
 " Last Change: 2020-08-25
 " Version: 1.0
