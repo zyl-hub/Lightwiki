@@ -42,6 +42,6 @@ endfunction
 nnoremap <LEADER>ww :e ~/vimwiki/index.md<CR>
 autocmd Filetype markdown nnoremap <CR> :LightWikiMutiAction<CR>
 autocmd Filetype markdown vnoremap <CR> :LightWikiVisualMutiAction<CR>
-autocmd Filetype markdown nnoremap <BS> :w<CR>:bd<CR>
+autocmd Filetype markdown nnoremap <BS> :bd<CR>
 autocmd Filetype markdown nnoremap <TAB> /# [*<CR>:nohlsearch<CR>
 autocmd Filetype markdown nnoremap <C-Space> :LightWikiTodoList<CR>
