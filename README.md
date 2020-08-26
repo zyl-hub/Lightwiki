@@ -26,6 +26,13 @@ Vim plugin for markdown file to make notes tidier
 
 ### Backspace
 
+
+``` vimscript
+" if you want use <BS> in normal mode to kill current buffer
+" default 0
+let g:ApplyBSkillBuffer = 1
+```
+
 - Normal
 
     Use with airline tabeline

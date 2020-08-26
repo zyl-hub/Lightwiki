@@ -9,6 +9,7 @@ if exists('g:LightWikiLoaded')
 	finish
 endif
 let g:LightWikiLoaded = 1
+let g:ApplyBSkillBuffer = 0
 
 command! -nargs=0 LightWikiMutiAction call s:mutiActionFunc()
 "command! -nargs=0 LightWikiVisualMutiAction call s:visualMutiActionFunc()
@@ -38,10 +39,13 @@ func! s:todoList()
         execute "normal!^f]a\<BS>\<BS>X]\<esc>$"
     endif
 endfunction
-
+if exists('g:ApplyBSkillBuffer')
+    nnoremap <BS> :w<CR>:bd<CR>
+endif
 nnoremap <LEADER>ww :e ~/vimwiki/index.md<CR>
-autocmd Filetype markdown nnoremap <CR> :LightWikiMutiAction<CR>
-autocmd Filetype markdown vnoremap <CR> :call VisualMdMutiActionFunc()<CR>
-autocmd Filetype markdown nnoremap <BS> :bd<CR>
-autocmd Filetype markdown nnoremap <TAB> /# [*<CR>:nohlsearch<CR>
-autocmd Filetype markdown nnoremap <C-Space> :LightWikiTodoList<CR>
+autocmd Filetype markdown nnoremap <buffer> <CR> :LightWikiMutiAction<CR>
+autocmd Filetype markdown vnoremap <buffer> <CR> :call VisualMdMutiActionFunc()<CR>
+autocmd Filetype markdown nnoremap <buffer> <BS> :w<CR>:bd<CR>
+autocmd Filetype netrw nnoremap <buffer> <BS> :bd<CR>
+autocmd Filetype markdown nnoremap <buffer> <TAB> /# [*<CR>:nohlsearch<CR>
+autocmd Filetype markdown nnoremap <buffer> <C-Space> :LightWikiTodoList<CR>
