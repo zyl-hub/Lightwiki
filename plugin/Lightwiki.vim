@@ -11,7 +11,7 @@ endif
 let g:LightWikiLoaded = 1
 
 command! -nargs=0 LightWikiMutiAction call s:mutiActionFunc()
-command! -nargs=0 LightWikiVisualMutiAction call s:visualMutiActionFunc()
+"command! -nargs=0 LightWikiVisualMutiAction call s:visualMutiActionFunc()
 command! -nargs=0 LightWikiTodoList call s:todoList()
 
 function! s:mutiActionFunc()
@@ -25,8 +25,8 @@ function! s:mutiActionFunc()
     endif
 endfunction
 
-function! s:visualMutiActionFunc()
-    execute "normal!yyppi\<BS>\<esc>F#la[\<esc>f#i](\<esc>f#vf d$a.md) "
+function! VisualMdMutiActionFunc()
+    execute "normal!yyppi\<BS>\<esc>F#la[\<esc>f#i](\<esc>f#vf d$a.md) \<esc>kdd"
 endfunction
 
 func! s:todoList()
@@ -41,7 +41,7 @@ endfunction
 
 nnoremap <LEADER>ww :e ~/vimwiki/index.md<CR>
 autocmd Filetype markdown nnoremap <CR> :LightWikiMutiAction<CR>
-autocmd Filetype markdown vnoremap <CR> :LightWikiVisualMutiAction<CR>
+autocmd Filetype markdown vnoremap <CR> :call VisualMdMutiActionFunc()<CR>
 autocmd Filetype markdown nnoremap <BS> :bd<CR>
 autocmd Filetype markdown nnoremap <TAB> /# [*<CR>:nohlsearch<CR>
 autocmd Filetype markdown nnoremap <C-Space> :LightWikiTodoList<CR>
