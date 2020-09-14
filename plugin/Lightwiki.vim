@@ -27,7 +27,7 @@ function! s:mutiActionFunc()
 endfunction
 
 function! VisualMdMutiActionFunc()
-    execute "normal!yyppi\<BS>\<esc>F#la[\<esc>f#i](\<esc>f#vf d$a.md) \<esc>kdd"
+    execute "normal!yyppi\<BS>\<esc>F#la[\<esc>f#i](\<esc>f#vf d$a) \<esc>kdd"
 endfunction
 
 func! s:todoList()
