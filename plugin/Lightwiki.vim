@@ -42,7 +42,7 @@ endfunction
 if exists('g:ApplyBSkillBuffer')
     nnoremap <BS> :w<CR>:bd<CR>
 endif
-nnoremap <LEADER>ww :e ~/vimwiki/index.md<CR>
+nnoremap <LEADER>ww :e ~/wiki/index.md<CR>
 autocmd Filetype markdown nnoremap <buffer> <CR> :LightWikiMutiAction<CR>
 autocmd Filetype markdown vnoremap <buffer> <CR> :call VisualMdMutiActionFunc()<CR>
 autocmd Filetype markdown nnoremap <buffer> <BS> :w<CR>:bd<CR>
